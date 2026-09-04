@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unprompted — your mind, out loud</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <style>.setup-card.is-hidden{display:none}.connected-bar{display:none;border:1px solid #a9c4ad;background:#eef4ec;padding:13px 16px;margin:-2px 0 18px;align-items:center;justify-content:space-between;font:11px 'DM Mono',monospace}.connected-bar.is-visible{display:flex}.connected-bar i{display:inline-block;width:6px;height:6px;border-radius:50%;background:#67a676;margin-right:8px}.connected-bar small{color:#74766e;margin-left:10px}.connected-bar button{border:0;background:transparent;color:#20211f;font:11px 'DM Mono',monospace;cursor:pointer;text-decoration:underline;text-underline-offset:3px}.picker-help{margin:12px 0 0 37px;color:#a09e94;font-size:11px}</style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">✳</span> unprompted</a>
+    <div class="top-actions"><span class="vault-status"><i></i><span id="vaultStatus">No vault connected</span></span><button class="icon-btn" id="settingsBtn" aria-label="Settings">☼</button></div>
+  </header>
+
+  <main>
+    <section class="intro">
+      <p class="eyebrow">A speaking practice space</p>
+      <h1>Think out loud.<br><em>Find your thread.</em></h1>
+      <p class="lede">Turn the ideas in your Obsidian vault into a daily ritual of curious, unplanned conversation.</p>
+    </section>
+
+    <section class="setup-card" id="setupCard">
+      <div class="setup-copy"><span class="step">01</span><div><h2>Connect your vault</h2><p>Choose your Obsidian vault folder. Every Markdown file inside it, including nested folders, will be scanned for <code>[[wikilinks]]</code>.</p></div></div>
+      <div class="setup-actions"><button class="outline-btn" id="browseBtn"><span>＋</span> Choose vault folder</button><button class="outline-btn secondary" id="filesBtn">Choose files / ZIP</button><input id="folderInput" type="file" webkitdirectory directory multiple hidden /><input id="filesInput" type="file" multiple accept=".md,.zip" hidden /></div>
+      <p class="picker-help" id="pickerHelp">If your browser cannot select folders, use Chrome on a laptop or select the Markdown files manually.</p>
+      <div class="privacy-note">Static + local only <span>·</span> markdown stays on this device</div>
+    </section>
+    <div class="connected-bar" id="connectedBar"><span><i></i><strong id="connectedName">Vault connected</strong><small id="connectedCount"></small></span><button id="changeVault">Change vault ↗</button></div>
+
+    <section class="practice-card">
+      <div class="card-header"><div><span class="step">02</span><span class="section-label">Choose your pace</span></div><span id="countLabel" class="mono">0 topics loaded</span></div>
+      <div class="modes" role="radiogroup" aria-label="Practice mode"><button class="mode active" data-mode="quick"><span>✦</span><strong>Quick spark</strong><small>Say the first thing that comes to mind</small></button><button class="mode" data-mode="deep"><span>◌</span><strong>Go deeper</strong><small>Follow the idea wherever it leads</small></button></div>
+      <div class="topic-area"><div class="ready-label"><span class="pulse"></span><span id="stateLabel">NO VAULT CONNECTED</span></div><div class="topic" id="topic">Connect your vault<br><small>and your topics will appear here</small></div><div class="topic-meta" id="topicMeta">Spin is available as a preview · connect a vault for your topics</div></div>
+      <div class="controls"><div class="timer-options"><button class="timer active" data-time="60">01:00</button><button class="timer" data-time="180">03:00</button><button class="timer" data-time="300">05:00</button></div><button class="spin-btn" id="spinBtn">Spin <span>↗</span></button><button class="reset-btn" id="resetBtn">reset</button></div>
+    </section>
+    <section class="recent"><div class="recent-head"><span>RECENT THREADS</span><button id="clearBtn">clear all</button></div><div id="recentList" class="recent-list"><div class="empty">Your spun topics will collect here.</div></div></section>
+  </main>
+  <footer><span>made for the curious</span><span>v 0.1 · local beta</span></footer>
+  <div class="toast" id="toast"></div>
+  <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script><script src="app.js"></script>
+</body>
+</html>
