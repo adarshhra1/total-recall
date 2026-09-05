@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title>Unprompted</title>
+  <rect width="64" height="64" rx="16" fill="#f5f3ee"/>
+  <path
+    d="M16 31.5c0-10.2 7.4-17.5 18-17.5 9.4 0 16 5.8 16 14.5 0 8.9-7.2 15.7-17.2 15.7-2.5 0-4.8-.4-6.9-1.2L18 48l2.4-8.1c-2.8-2.5-4.4-5.1-4.4-8.4Z"
+    fill="none"
+    stroke="#20211f"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="3.5"
+  />
+  <path
+    d="M26 31.5c3.2-4.8 6.3 4.8 9.5 0s6.3 4.8 9.5 0"
+    fill="none"
+    stroke="#eb5e3f"
+    stroke-linecap="round"
+    stroke-width="3.5"
+  />
+  <circle cx="22" cy="22" r="3" fill="#eb5e3f"/>
+</svg>
